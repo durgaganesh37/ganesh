@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 
-# Function to load tasks from a JSON file
 def load_tasks():
     try:
         with open("tasks.json", "r") as file:
@@ -10,12 +9,12 @@ def load_tasks():
         tasks = []
     return tasks
 
-# Function to save tasks to a JSON file
+
 def save_tasks(tasks):
     with open("tasks.json", "w") as file:
         json.dump(tasks, file, indent=4)
 
-# Function to add a task
+
 def add_task(tasks):
     title = input("Enter task title: ")
     priority = input("Enter priority (high/medium/low): ").lower()
@@ -29,7 +28,7 @@ def add_task(tasks):
     save_tasks(tasks)
     print("Task added successfully.")
 
-# Function to remove a task
+
 def remove_task(tasks):
     print_tasks(tasks)
     task_index = int(input("Enter the index of the task to remove: "))
@@ -40,7 +39,6 @@ def remove_task(tasks):
     else:
         print("Invalid task index.")
 
-# Function to mark a task as completed
 def complete_task(tasks):
     print_tasks(tasks)
     task_index = int(input("Enter the index of the task to mark as completed: "))
@@ -51,7 +49,6 @@ def complete_task(tasks):
     else:
         print("Invalid task index.")
 
-# Function to display tasks
 def print_tasks(tasks):
     if tasks:
         print("\nTask List:")
@@ -61,7 +58,7 @@ def print_tasks(tasks):
     else:
         print("No tasks.")
 
-# Main function
+
 def main():
     tasks = load_tasks()
     while True:
